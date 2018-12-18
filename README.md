@@ -76,10 +76,13 @@ Take a look at `examples.js` for more examples.
 # Why?
 
 A while ago, I encountered [this](https://twitter.com/jg_lim/status/1027378276342231042) and thought that I could improve on it.
+
 ![OM](https://raw.github.com/jglim/clientsidedcaptcha.js/master/omcaptcha.gif)
 
 _"hackathon-grade" code quality (at SuperSillyHack 2018) - this might be buggy_
+
 Please _try_ not to use it in production, though if you do, I would be glad to hear about it :^)
+
 [@jg_lim](https://twitter.com/jg_lim)
 
 
