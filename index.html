@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>clientsidedcaptcha.js</title>
+
+    <style>
+    #your-form
+    {
+    	width: 500px;
+    	min-height: 300px;
+    	padding: 30px;
+    	margin: 120px auto;
+    	background-color: #eee;
+    	border-radius: 8px;
+    }
+    body 
+    {
+    	background-color: #eaeaea;
+    	font-family: sans-serif;
+    }
+    label
+    {
+    	display: inline-block;
+    	width: 160px;
+    	margin: 8px;
+    }
+    input[type='text']
+    {
+    	padding: 10px;
+    	width: calc(100% - 20px);
+    }
+    input[type='password']
+    {
+    	padding: 10px;
+    	width: calc(100% - 20px);
+    }
+    button[type='submit']
+    {
+    	padding: 10px;
+    	width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+
+  <form id="your-form">
+  	<h1>captcha!</h1>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Your Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password, again</label>
+      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Agree to the fine print</label>
+    </div>
+
+    <!-- <input type="hidden" id="captcha" data-verified="false"/> -->
+    <button type="submit" class="btn btn-primary" data-callback="formSubmit">Register</button>
+
+  </form>
+
+    <script src="clientsidedcaptcha.js"></script>
+    <script src="examples.js"></script>
+
+    <script>
+    function formSubmit(){
+    	alert("Form was successfully submitted");
+    }
+
+    // example options
+    const captchaOptions =
+    {
+        image: "data:image/png;base64,",
+        textIntro: "Select squares containing elements that cannot accept",
+        textSubject: "css pseudo-elements",
+        answerGrid: [
+            0, 0,
+            0, 1
+        ]
+    };
+
+    let captcha = new clientsidedcaptcha(examples["mines"]);
+    </script>
+  </body>
+</html>
